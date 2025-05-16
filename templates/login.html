@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+<style>
+        body {
+                font-family: Ariel, sans-serif;
+                background-color: #f4f4f9;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+        }
+
+        label {
+                display:block;
+                margin: 10px 0 5px;
+                font-size: 14px;
+                color: #333;
+        }
+
+        h2 { color: #123;}
+
+        button:hover{
+                background-color:#5a5a5a;
+        }
+
+        button {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: none;
+                background-color: #6a50ff;
+                color: white;
+                font-size: 16px;
+                border-radius: 4px;
+                cursor: pointer;
+        }
+
+        input[type="text"], input[type="password"] {
+
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #aaa;
+                font-size: 14px;
+                background-color: #f5f5f5;
+
+        }
+
+        .signup-btn-container {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+        }
+
+</style>
+</head>
+<body>
+        <div class="login-container">
+                <form action="/login" method="POST">
+                        <h2>Login</h2>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                        <br>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                        <br>
+                        <button type="submit">Login</button>
+                </form>
+        </div>
+        <div class="signup-btn-container">
+                <form action="/signup" method="GET">
+                        <button type="submit" class="signup-btn">Sign up</button>
+                </form>
+        </div>
+</body>
+</html>

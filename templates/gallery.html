@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gallery</title>
+</head>
+<body>
+        <h1>Welcome, {{ current_user.username }}</h1>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" required>
+                <input type="text" name="image_name" placeholder="Image Name" required>
+                <button type="submit">Upload</button>
+        </form>
+
+        <form action="/search" method="get">
+                <input type="text" name="query" placeholder="Search images">
+                <button type="submit">Search</button>
+        </form>
+
+        <h2>Your Images:</h2>
+        <ul>
+                {% for image_id, image_name, image_data in images %}
+  			<div>
+    				<p>{{ image_name }}</p>
+    				<img src="data:image/jpeg;base64,{{ image_data }}" width="200" />
+    				<br />
+    				<a href="{{ url_for('download_file', filename=image_id) }}">Download</a>
+  			</div>
+		{% endfor %}
+        </ul>
+
+        <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

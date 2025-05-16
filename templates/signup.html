@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Signup</title>
+<style>
+	body{
+		font-family: Ariel, sans-serif;
+		background-color: #f4f4f9;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		margin: 0;
+	}
+	
+	label {
+		display:block;
+		margin: 10px 0 5px;
+		font-size: 14px;
+		color: #333;
+	}
+
+	h2 { color: #123;}
+
+	button:hover{
+		background-color:#5a5a5a;
+	}
+
+	button {
+		width: 100%;
+		padding: 10px;
+		border: none;
+		background-color: #6a50ff;
+		color: white;
+		font-size: 16px;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	input[type="text"], input[type="password"] {
+
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 10px;
+		border: 1px solid #aaa;
+		font-size: 14px;
+		background-color: #f5f5f5;
+		
+	}
+
+	.login-btn-container {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+
+</style>
+</head>
+<body>
+	<form action="/signup" method="POST">
+		<h2>Sign up</h2>
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username" required>
+		<br>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" required>
+		<br>
+        <label for="password">Re-Enter Password:</label>
+		<input type="password" id="confirm_password" name="confirm_password" required>
+		<br>
+		<button type="submit">Sign up</button>
+	</form>
+	<div class="login-btn-container">
+		<form action="/login" method="GET">
+			<button type="submit">Login</button>
+		</form>
+	</div>
+</body>
+</html>
